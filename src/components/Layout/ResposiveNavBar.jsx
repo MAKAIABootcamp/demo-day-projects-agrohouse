@@ -30,6 +30,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
   const [openRegister, setOpenRegister] = useState(false);
   const user = useSelector(store => store.user)
   const navigate = useNavigate()
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -58,11 +59,15 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
     navigate('profile')
   }
 
+  const handleMyEvents = () => {
+    navigate('myevents')
+  }
+
   const handleOpen = () => setOpen(true);
   const handleOpenRegister = () => setOpenRegister(true)
 
   const pages = ['Eventos', 'Productos'];
-  const settingsUser = ['Perfil', 'Cerrar Sesión'];
+  const settingsUser = ['Perfil', 'Mis eventos', 'Cerrar Sesión'];
   const settingsNoUser = ['Registrarse', 'Iniciar Sesión']
   return (
     <>
@@ -188,6 +193,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
                               : setting === 'Registrarse'
                               && handleOpenRegister
 
+
                           }
                         >
                           <Typography textAlign="center">{setting}</Typography>
@@ -201,7 +207,9 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
                             setting === 'Cerrar Sesión'
                               ? handleLogout
                               : setting === 'Perfil'
-                              && handleProfile
+                                ? handleProfile
+                                : setting === 'Mis eventos'
+                                && handleMyEvents
 
                           }
                         >

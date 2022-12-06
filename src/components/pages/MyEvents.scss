@@ -1,0 +1,27 @@
+.myEvents{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 130px);
+  &__head{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__tittle{
+      font-weight: bold;
+      font-size: 22px;
+      color: #006837
+    }
+  }
+  &__main{
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    margin-top: 50px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
