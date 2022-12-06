@@ -11,6 +11,7 @@ import PrivateRouter from "./PrivateRouter";
 import Profile from "../components/pages/Profile";
 import Loading from "../components/Loading/Loading";
 import MyEvents from "../components/pages/MyEvents";
+import CreateEvent from "../components/pages/CreateEvent";
 
 const Router = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined)
@@ -64,6 +65,7 @@ const Router = () => {
           <Route element={<ResposiveNavBar setIsLoggedIn={setIsLoggedIn} />}>
             <Route path="profile" element={<Profile />} />
             <Route path="myevents" element={<MyEvents />} />
+            <Route path="createevent" element={<CreateEvent />} />
           </Route>
         </Route>
       </Routes>
