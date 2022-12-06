@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, CardMedia } from "@mui/material";
+import { Card, CardContent, CardMedia } from "@mui/material";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,9 +7,8 @@ import { getOwnProductsAsync } from "../../redux/actions/allProductsAction";
 import { deleteProductAsync } from "../../redux/actions/productAction";
 import { DeleteChip, EditChip } from "../MaterialComponents/ChipsStyled";
 import ModalEditProduct from "./ModalEditProduct";
-import ModalEditProfile from "./ModalEditProfile";
 import './Products.scss'
-
+import NoData from "../noData/NoData";
 
 const Products = () => {
   const { uid } = useSelector(store => store.user)
@@ -53,7 +52,7 @@ const Products = () => {
   return (
     <>
       {
-        ownProducts !== []
+        ownProducts.length !== 0
           ? ownProducts.map((product, index) =>
             <Card key={index} sx={{ width: 250, height: 'fit-content' }}>
               <CardMedia
@@ -77,7 +76,7 @@ const Products = () => {
               </CardContent>
             </Card>
           )
-          : <div>No hay productos</div>
+          : <NoData text={'No tienes productos'} />
       }
       <ModalEditProduct open={openEditProduct} setOpen={setOpenEditProduct} product={productToEdit} />
 

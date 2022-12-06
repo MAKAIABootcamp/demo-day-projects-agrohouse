@@ -1,5 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Typography } from "@mui/material";
+import { Autocomplete, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -16,6 +16,7 @@ const EditProdutcForm = ({ setOpen, product }) => {
   const user = useSelector(store => store.user)
   const dispatch = useDispatch()
   const { error } = useSelector((store) => store.user);
+  const subRegions = ['Bajo Cauca', 'Magdalena Medio', 'Nordeste', 'Norte', 'Occidente', 'Oriente', 'Suroeste', 'Urabá', 'Valle de Aburrá']
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schemaAddProduct)
@@ -109,15 +110,21 @@ const EditProdutcForm = ({ setOpen, product }) => {
           error={!!errors?.quantity}
           helperText={errors?.quantity ? errors.quantity.message : null}
         />
-        <CssTextField
-          label="Region"
-          type='text'
-          placeholder="Region"
-          variant="standard"
-          defaultValue={product.region}
-          {...register('region')}
-          error={!!errors?.region}
-          helperText={errors?.region ? errors.region.message : null}
+        <Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          options={subRegions}
+          sx={{ width: 300 }}
+          renderInput={(params) =>
+            <CssTextField
+              type='text'
+              variant="standard"
+              {...register('region')}
+              error={!!errors?.region}
+              helperText={errors?.region ? errors.region.message : null}
+              {...params}
+              label="Region"
+            />}
         />
         <CssTextField
           label="Precio"
