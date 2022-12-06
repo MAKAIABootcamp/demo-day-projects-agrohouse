@@ -9,6 +9,7 @@ import PublicRouter from "./PublicRouter";
 import { userLoginSync } from "../redux/actions/userAction";
 import PrivateRouter from "./PrivateRouter";
 import Profile from "../components/pages/Profile";
+import Loading from "../components/Loading/Loading";
 
 const Router = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined)
@@ -46,7 +47,11 @@ const Router = () => {
     })
   }, [isLoggedIn, check]);
 
-
+  if (check) {
+    return (
+      <Loading />
+    )
+  }
 
   return (
     <BrowserRouter>
