@@ -10,11 +10,12 @@ import dayjs from 'dayjs';
 import './CreateEventForm.scss'
 import { useState } from "react";
 import AutocompleteMaterial from "@mui/material/Autocomplete";
-import { Autocomplete, useJsApiLoader } from '@react-google-maps/api'
+import { Autocomplete, useJsApiLoader, useGoogleMap, useLoadScript } from '@react-google-maps/api'
 import { useDispatch, useSelector } from "react-redux";
 import { addEventAsync } from "../../redux/actions/eventsAction";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 
 const CreateEventForm = ({ directionRef, setCenter }) => {
@@ -25,11 +26,13 @@ const CreateEventForm = ({ directionRef, setCenter }) => {
   const [value, setValue] = useState(dayjs());
   const subRegions = ['Bajo Cauca', 'Magdalena Medio', 'Nordeste', 'Norte', 'Occidente', 'Oriente', 'Suroeste', 'Urabá', 'Valle de Aburrá']
 
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: 'AIzaSyDZtYLrKeDz6WyW__vTxaVTEaSeusb-hsI',
-    libraries: ['places']
+    libraries: ["places"]
   })
+
   const onSubmit = (data) => {
     const newDate = `${value.get('month') + 1}/${value.get('date')}/${value.get('year')}`
     const newEvent = {
@@ -60,12 +63,11 @@ const CreateEventForm = ({ directionRef, setCenter }) => {
     // eslint-disable-next-line no-undef
     const geocoder = new google.maps.Geocoder()
     geocoder.geocode({ 'address': directionRef.current.value }, (results, status) => {
-      if (status == 'OK') {
+      if (status === 'OK') {
         setCenter(results[0].geometry.location)
       }
     })
   }
-
 
   return (
     <form className="newEvent" onSubmit={handleSubmit(onSubmit)}>
@@ -108,10 +110,14 @@ const CreateEventForm = ({ directionRef, setCenter }) => {
           renderInput={(params) => <CssTextField  {...params} />}
         />
       </LocalizationProvider>
-
-      <Autocomplete >
-        <input {...register('ubication')} className="newEvent__direction" type="text" ref={directionRef} />
-      </Autocomplete>
+      {
+        isLoaded
+        && (
+          <Autocomplete>
+            <input {...register('ubication')} className="newEvent__direction" type="text" ref={directionRef} />
+          </Autocomplete>
+        )
+      }
       <GreenButton onClick={handleSeeUbication} sx={{ width: 'fit-content' }}>Ver Ubicación</GreenButton>
       <GreenButton type="submit">Crear Evento</GreenButton>
     </form>
