@@ -37,7 +37,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
     setAnchorElUser(event.currentTarget);
   };
   const handlePage = (page) => {
-    console.log(page);
+    navigate ('/{page}')
     handleCloseNavMenu()
   }
 
@@ -61,7 +61,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
   const handleOpen = () => setOpen(true);
   const handleOpenRegister = () => setOpenRegister(true)
 
-  const pages = ['Eventos', 'Productos'];
+  const pages = ['Eventos', 'Productos','Regiones'];
   const settingsUser = ['Perfil', 'Cerrar Sesión'];
   const settingsNoUser = ['Registrarse', 'Iniciar Sesión']
   return (
@@ -85,7 +85,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
                 textDecoration: 'none',
               }}
             >
-              <img src={logo1} alt="logo" className="logoNavBar" />
+              {/* <img src={logo1} alt="logo" className="logoNavBar" /> */}
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

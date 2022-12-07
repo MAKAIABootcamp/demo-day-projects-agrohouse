@@ -9,6 +9,8 @@ import PublicRouter from "./PublicRouter";
 import { userLoginSync } from "../redux/actions/userAction";
 import PrivateRouter from "./PrivateRouter";
 import Profile from "../components/pages/Profile";
+import Products from "../components/Profile/Products";
+import { Events } from "../components/Profile/Events";
 
 const Router = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined)
@@ -56,7 +58,9 @@ const Router = () => {
         </Route>
         <Route element={<PrivateRouter isAuthentication={isLoggedIn} />}>
           <Route element={<ResposiveNavBar setIsLoggedIn={setIsLoggedIn} />}>
-            <Route path="profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/Productos" element={<Products/>} />
+            <Route path="/Eventos" element={<Events />} />
           </Route>
         </Route>
       </Routes>
