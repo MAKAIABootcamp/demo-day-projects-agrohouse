@@ -38,7 +38,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
     setAnchorElUser(event.currentTarget);
   };
   const handlePage = (page) => {
-    console.log(page);
+    navigate(`/${page}`)
     handleCloseNavMenu()
   }
 
@@ -57,10 +57,12 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
 
   const handleProfile = () => {
     navigate('profile')
+    setAnchorElUser(null)
   }
 
   const handleMyEvents = () => {
     navigate('myevents')
+    setAnchorElUser(null)
   }
 
   const handleOpen = () => setOpen(true);
@@ -192,8 +194,6 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
                               ? handleOpen
                               : setting === 'Registrarse'
                               && handleOpenRegister
-
-
                           }
                         >
                           <Typography textAlign="center">{setting}</Typography>
