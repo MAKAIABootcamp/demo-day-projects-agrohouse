@@ -94,7 +94,7 @@ const CreateEventForm = ({ directionRef, setCenter }) => {
             error={!!errors?.region}
             helperText={errors?.region ? errors.region.message : null}
             {...params}
-            label="Region"
+            label="Productos provenientes del"
           />}
       />
       <LocalizationProvider dateAdapter={AdapterDayjs}>

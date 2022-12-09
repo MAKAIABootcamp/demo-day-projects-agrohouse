@@ -62,12 +62,11 @@ const Router = () => {
       <Routes>
         <Route element={<ResposiveNavBar setIsLoggedIn={setIsLoggedIn} />}>
           <Route path="/" element={<Home />} />
+          <Route path="Eventos" element={<Events />} />
+          <Route path="Productos" element={<Products />} />
         </Route>
         <Route element={<PrivateRouter isAuthentication={isLoggedIn} />}>
           <Route element={<ResposiveNavBar setIsLoggedIn={setIsLoggedIn} />}>
-
-            <Route path="Productos" element={<Products />} />
-            <Route path="Eventos" element={<Events />} />
             <Route path="profile" element={<Profile />} />
             <Route path="myevents" element={<MyEvents />} />
             <Route path="createevent" element={<CreateEvent />} />

@@ -73,9 +73,10 @@ const EditProdutcForm = ({ setOpen, product }) => {
         title: 'Producto actualizado exitosamente!!',
         showConfirmButton: false,
         timer: 1500
-      })
+      }).finally(
+        dispatch(getOwnProductsAsync(user.uid))
+      )
     }
-    dispatch(getOwnProductsAsync(user.uid))
   }
   return (
     <Container>
