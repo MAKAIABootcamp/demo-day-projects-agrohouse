@@ -68,7 +68,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
   const handleOpen = () => setOpen(true);
   const handleOpenRegister = () => setOpenRegister(true)
 
-  const pages = ['Eventos', 'Productos'];
+  const pages = ['Eventos','Del Campo','Mis Productos'];
   const settingsUser = ['Perfil', 'Mis eventos', 'Cerrar Sesión'];
   const settingsNoUser = ['Registrarse', 'Iniciar Sesión']
   return (

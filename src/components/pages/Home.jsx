@@ -11,6 +11,11 @@ import '../styles/Home.css'
 import info1 from '../Assets/Images/info1.png'
 import info2 from '../Assets/Images/info2.png'
 import info3 from '../Assets/Images/info3.png'
+import fav1 from '../Assets/Images/coco.jpg'
+import fav2 from '../Assets/Images/coliflor.jpg'
+import fav3 from '../Assets/Images/maracuyá.jpg'
+import fav4 from '../Assets/Images/papaya.jpg'
+import fav5 from '../Assets/Images/arveja.jpg'
 
 
 
@@ -117,7 +122,7 @@ const Home = () => {
             <Carousel.Item>
               <img
                 className="d-block w-18 m-auto"
-                src="https://resources.fruvi.co/resources/photos/Sf33URMBKNRLrURMx9JL23J4aVPXtZIOZMnXGDMlx8XlR3MbeG.jpg"
+                src={fav1}
                 alt="Imagen coco"
               />
 
@@ -125,7 +130,7 @@ const Home = () => {
             <Carousel.Item>
               <img
                 className="d-block w-18 m-auto"
-                src="https://resources.fruvi.co/resources/photos/qPtxYNzt44TmnkQKTeFxbEaics9aJB2TkBWJVVEKH7vGegWiu4.jpg"
+                src={fav5}
                 alt="Imagen arveja"
               />
 
@@ -133,7 +138,7 @@ const Home = () => {
             <Carousel.Item>
               <img
                 className="d-block w-18 m-auto"
-                src="https://resources.fruvi.co/resources/photos/muyHvkytC4hbkf6TzMNXMhMn74Dl3ij6Y53OmUZtls9B7wO7H2.jpg"
+                src={fav2}
                 alt="Imagen Coliflor"
               />
 
@@ -142,7 +147,7 @@ const Home = () => {
             <Carousel.Item>
               <img
                 className="d-block w-18 m-auto"
-                src="https://resources.fruvi.co/resources/photos/2rUGN6pK8GLQnZ7KQAM404UPoFUEGrS3jGvuKtZcGWTreS6aaO.jpg"
+                src={fav3}
                 alt="Imagen maracuya"
               />
 
@@ -151,7 +156,7 @@ const Home = () => {
             <Carousel.Item>
               <img
                 className="d-block w-18 m-auto"
-                src="https://resources.fruvi.co/resources/photos/dD8DlpGzZf6nipXZqahkZ6zuWRz6mUa36izfYIHxlhs4vRI3eQ.jpg"
+                src={fav4}
                 alt="Imagen papaya"
               />
 

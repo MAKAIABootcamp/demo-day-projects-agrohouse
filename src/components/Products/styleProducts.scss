@@ -1,0 +1,28 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+    h2{
+        color: rgb(5, 88, 5);
+    }
+}
+
+.container_cards{
+    display: flex;
+    align-content: center;
+    width: 90vw;
+    height: 100vh;
+    margin-left: 60px;
+    gap:15px;
+}
+
+.mb-3{
+    width: 500px;
+}
+
+.card__buttons{
+    margin-left: 35px;
+}
