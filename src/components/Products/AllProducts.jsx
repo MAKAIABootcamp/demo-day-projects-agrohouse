@@ -7,8 +7,20 @@ import {Card, Button} from 'react-bootstrap';
 import './styleProducts.scss'
 import imgPrueba from '../Assets/Images/papaya.jpg'
 import { height } from '@mui/system';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllProductsAsync } from '../../redux/actions/allProductsAction';
+import { useEffect } from 'react';
 
 const AllProducts = () => {
+
+const products= useSelector(store=>store.allProducts)
+const dispatch= useDispatch();
+
+useEffect(() => {
+  dispatch(getAllProductsAsync());
+}, [])
+
+
   return (
     <>
     <div className='container'>
@@ -39,21 +51,28 @@ const AllProducts = () => {
       </Col>
     </Row>
     </div>
-    <div className='container_cards'>
-    <Card className="text-center" style={{ width: '15rem', height:'25rem' }} border="success">
-        <Card.Img style={{width: '14rem', height:'12rem'}} variant="top" src={imgPrueba} />
+
+    <div className='container_cards1'>
+    {
+      products.map((product, index)=>
+      <Card  key={index} className="text-center" style={{ width: '15rem', height:'25rem' }} border="success">
+        <Card.Img style={{width: '14rem', height:'12rem'}} variant="top" src={product.image} />
         <Card.Body>
-          <Card.Title className="fs-4">Papaya</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">-500gr-</Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">Region</Card.Subtitle>
+          <Card.Title className="fs-4">{product.name}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">-{product.quantity}-</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">{product.type}</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">{product.region}</Card.Subtitle>
           <Card.Text className={`text-center text-success fs-4 fw-bold`}>
-            $5.800
+            ${product.price}
           </Card.Text>
           <Button  variant="outline-success"
             >Detalles
           </Button>
         </Card.Body>
       </Card>
+      )
+    }
+    
     </div>
    
     </>

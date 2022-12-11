@@ -56,9 +56,9 @@ const Products = () => {
 
   return (
     <>
-    <div className='container'>
+    {/* <div className='container'>
     <h2 className='h2'>Mis Productos</h2>
-    </div>
+    </div> */}
 
       <div className='container_cards'>
       {

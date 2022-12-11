@@ -10,13 +10,15 @@
     }
 }
 
-.container_cards{
+.container_cards1{
     display: flex;
+    flex-wrap: wrap;
     align-content: center;
     width: 90vw;
     height: 100vh;
     margin-left: 60px;
     gap:15px;
+    margin-top: 150px;
 }
 
 .mb-3{

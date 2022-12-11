@@ -22,9 +22,11 @@
 }
 .container_cards{
   display: flex;
+  flex-wrap: wrap;
   align-content: center;
   width: 90vw;
   height: 100vh;
   margin-left: 60px;
   gap:15px;
+  margin-top: 110px;
 }

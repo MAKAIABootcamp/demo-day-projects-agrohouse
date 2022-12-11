@@ -33,3 +33,28 @@ const getOwnProductsSync = (products) => {
   }
 }
 
+export const getAllProductsAsync=(uid)=>{
+  return async (dispatch) => {
+    const querySnapshot = await getDocs(productsCollection);
+    const products = [];
+    try {
+        querySnapshot.forEach(element => {
+            const product = {
+                id: element.id,
+                ...element.data()
+            }
+            products.push(product)
+        })
+    } catch (error) {
+        console.log(error);
+    } finally {
+        dispatch(getAllProductsSync(products))
+    }
+}
+}
+const getAllProductsSync =(products)=>{
+  return {
+    type: allProductsTypes.GET_PRODUCTS,
+    payload: products
+  }
+}
