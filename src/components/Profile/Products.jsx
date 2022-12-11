@@ -54,7 +54,7 @@ const Products = () => {
       {
         ownProducts.length !== 0
           ? ownProducts.map((product, index) =>
-            <Card key={index} sx={{ width: 250, height: 'fit-content' }}>
+            <Card key={index} sx={{ width: 250, height: 'fit-content', border: '1px solid #006837' }}>
               <CardMedia
                 component="img"
                 height="140"

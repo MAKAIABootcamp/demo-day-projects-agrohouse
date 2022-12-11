@@ -6,6 +6,10 @@ export const allProductsReducer = (state = [], action) => {
       return [
         ...action.payload
       ]
+    case allProductsTypes.GET_PRODUCTS:
+      return [
+        ...action.payload
+      ]
 
     default:
       return state

@@ -1,0 +1,35 @@
+.allProducts{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    gap: 20px;
+    h2{
+        color: rgb(5, 88, 5);
+        text-align: center;
+    }
+}
+
+.container_cards1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap:15px;
+    margin-top: 20px;
+}
+
+.mb-3{
+    width: 500px;
+}
+
+.card__buttons1{
+    margin-left: 35px;
+}
