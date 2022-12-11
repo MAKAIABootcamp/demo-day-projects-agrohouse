@@ -92,7 +92,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
                 textDecoration: 'none',
               }}
             >
-              {/* <img src={logo1} alt="logo" className="logoNavBar" /> */}
+              <img src={logo1} alt="logo" className="logoNavBar" />
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
