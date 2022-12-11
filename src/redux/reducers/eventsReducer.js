@@ -6,6 +6,10 @@ export const eventsReducer = (state = [], action) => {
       return [
         ...action.payload,
       ]
+    case eventsTypes.GET_OWN_EVENTS:
+      return [
+        ...action.payload
+      ]
 
     default:
       return state

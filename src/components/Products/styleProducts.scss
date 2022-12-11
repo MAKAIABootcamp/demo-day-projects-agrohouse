@@ -1,4 +1,10 @@
+.allProducts{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
 
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -7,24 +13,23 @@
     gap: 20px;
     h2{
         color: rgb(5, 88, 5);
+        text-align: center;
     }
 }
 
 .container_cards1{
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
-    width: 90vw;
-    height: 100vh;
-    margin-left: 60px;
+    justify-content: center;
+    width: 100%;
     gap:15px;
-    margin-top: 150px;
+    margin-top: 20px;
 }
 
 .mb-3{
     width: 500px;
 }
 
-.card__buttons{
+.card__buttons1{
     margin-left: 35px;
 }

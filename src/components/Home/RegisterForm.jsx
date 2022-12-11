@@ -12,16 +12,17 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { fileUpLoad } from "../../services/fileUpload";
 import { useDispatch, useSelector } from "react-redux";
-import { userRegisterAsync } from "../../redux/actions/userAction";
+import { userLoginAsync, userRegisterAsync } from "../../redux/actions/userAction";
 import Swal from "sweetalert2";
 import { GreenButton } from "../MaterialComponents/ButtonStyled";
 import { CssTextField } from "../MaterialComponents/TextFieldStyled";
+import { useNavigate } from "react-router";
 
 const RegisterForm = ({ setOpenRegister }) => {
   const [showPassword, setShowPassword] = useState(false)
   const dispatch = useDispatch()
   const { error } = useSelector((store) => store.user);
-
+  const navigate = useNavigate()
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
   }
@@ -70,7 +71,9 @@ const RegisterForm = ({ setOpenRegister }) => {
         title: 'Usuario creado exitosamente!!',
         showConfirmButton: false,
         timer: 1500
-      })
+      }).finally(
+        dispatch(userLoginAsync(data.email, data.password))
+      ).finally(() => window.location.reload())
     }
   }
   return (

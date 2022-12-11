@@ -1,5 +1,4 @@
-//import { Card, CardContent, CardMedia } from "@mui/material";
-import { Card } from 'react-bootstrap';
+import { Card, CardContent, CardMedia } from "@mui/material";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -63,20 +62,26 @@ const Products = () => {
       {
         ownProducts.length !== 0
           ? ownProducts.map((product, index) =>
-            <Card key={index} className="text-center" style={{ width: '15rem', height: 'fit-content' }} border="success">
-              <Card.Img style={{ width: '100%', height: '12rem', objectFit: 'cover' }} variant="top" src={product.image} />
-              <Card.Body>
-                <Card.Title className="fs-4">{product.name}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">-{product.quantity}-</Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">{product.region}</Card.Subtitle>
-                <Card.Text className={`text-center text-success fs-4 fw-bold`}>
-                  ${product.price}
-                </Card.Text>
-                <div className="card__buttons">
-                  <EditChip onClick={() => handleEdit(product)} label="Editar" />
-                  <DeleteChip onClick={() => handleDelete(product)} label="Eliminar" />
+            <Card key={index} sx={{ width: 250, height: 'fit-content', border: '1px solid #006837' }}>
+              <CardMedia
+                component="img"
+                height="140"
+                image={product.image}
+                alt={product.name}
+              />
+              <CardContent>
+                <div className="card__info">
+                  <span>{product.name}</span>
+                  <span>Tipo: {product.type}</span>
+                  <span>Cantidad: {product.quantity}</span>
+                  <span>Region: {product.region}</span>
+                  <span>${product.price}</span>
+                  <div className="card__buttons">
+                    <EditChip onClick={() => handleEdit(product)} label="Editar" />
+                    <DeleteChip onClick={() => handleDelete(product)} label="Eliminar" />
+                  </div>
                 </div>
-              </Card.Body>
+              </CardContent>
             </Card>
 
           )
