@@ -10,7 +10,11 @@ import { userLoginSync } from "../redux/actions/userAction";
 import PrivateRouter from "./PrivateRouter";
 import Profile from "../components/pages/Profile";
 import Products from "../components/Profile/Products";
-import { Events } from "../components/Profile/Events";
+import Events from "../components/pages/Events";
+import Loading from "../components/Loading/Loading";
+import MyEvents from "../components/pages/MyEvents";
+import CreateEvent from "../components/pages/CreateEvent";
+import AllProducts from "../components/Products/AllProducts";
 
 const Router = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined)
@@ -48,19 +52,25 @@ const Router = () => {
     })
   }, [isLoggedIn, check]);
 
-
+  if (check) {
+    return (
+      <Loading />
+    )
+  }
 
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<ResposiveNavBar setIsLoggedIn={setIsLoggedIn} />}>
           <Route path="/" element={<Home />} />
+          <Route path="Del Campo" element={<AllProducts />} />
         </Route>
         <Route element={<PrivateRouter isAuthentication={isLoggedIn} />}>
           <Route element={<ResposiveNavBar setIsLoggedIn={setIsLoggedIn} />}>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/Productos" element={<Products/>} />
-            <Route path="/Eventos" element={<Events />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="myevents" element={<MyEvents />} />
+            <Route path="createevent" element={<CreateEvent />} />
+
           </Route>
         </Route>
       </Routes>

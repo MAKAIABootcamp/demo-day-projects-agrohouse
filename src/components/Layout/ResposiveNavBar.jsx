@@ -30,6 +30,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
   const [openRegister, setOpenRegister] = useState(false);
   const user = useSelector(store => store.user)
   const navigate = useNavigate()
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -37,7 +38,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
     setAnchorElUser(event.currentTarget);
   };
   const handlePage = (page) => {
-    navigate ('/{page}')
+    navigate(`/${page}`)
     handleCloseNavMenu()
   }
 
@@ -56,13 +57,19 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
 
   const handleProfile = () => {
     navigate('profile')
+    setAnchorElUser(null)
+  }
+
+  const handleMyEvents = () => {
+    navigate('myevents')
+    setAnchorElUser(null)
   }
 
   const handleOpen = () => setOpen(true);
   const handleOpenRegister = () => setOpenRegister(true)
 
-  const pages = ['Eventos', 'Productos','Regiones'];
-  const settingsUser = ['Perfil', 'Cerrar Sesión'];
+  const pages = ['Eventos', 'Del Campo'];
+  const settingsUser = ['Perfil', 'Mis eventos', 'Cerrar Sesión'];
   const settingsNoUser = ['Registrarse', 'Iniciar Sesión']
   return (
     <>
@@ -129,7 +136,7 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
               variant="h5"
               noWrap
               component="a"
-              href=""
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: 'flex', md: 'none' },
@@ -187,7 +194,6 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
                               ? handleOpen
                               : setting === 'Registrarse'
                               && handleOpenRegister
-
                           }
                         >
                           <Typography textAlign="center">{setting}</Typography>
@@ -201,7 +207,9 @@ const ResposiveNavBar = ({ setIsLoggedIn }) => {
                             setting === 'Cerrar Sesión'
                               ? handleLogout
                               : setting === 'Perfil'
-                              && handleProfile
+                                ? handleProfile
+                                : setting === 'Mis eventos'
+                                && handleMyEvents
 
                           }
                         >

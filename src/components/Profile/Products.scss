@@ -1,11 +1,56 @@
 .card__info{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .card__buttons{
   margin-top: 10px;
   display: flex;
-  align-items: center;
+  width: 100%;
+  justify-content: center;
   gap: 10px;
+
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  h2{
+      color: rgb(5, 88, 5);
+  }
+}
+.container_cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 90vw;
+  height: 100vh;
+  margin-left: 60px;
+  gap:15px;
+  margin-top: 110px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  h2{
+      color: rgb(5, 88, 5);
+  }
+}
+.container_cards{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 90vw;
+  height: 100vh;
+  margin-left: 60px;
+  gap:15px;
+  margin-top: 110px;
 }
