@@ -1,5 +1,5 @@
 //import { Card, CardContent, CardMedia } from "@mui/material";
-import {Card} from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -50,42 +50,40 @@ const Products = () => {
     })
   }
 
-  const handleDetails=()=>{
+  const handleDetails = () => {
     console.log('click');
   }
 
   return (
     <>
-    {/* <div className='container'>
+      {/* <div className='container'>
     <h2 className='h2'>Mis Productos</h2>
     </div> */}
 
-      <div className='container_cards'>
       {
         ownProducts.length !== 0
           ? ownProducts.map((product, index) =>
-        <Card key={index} className="text-center" style={{ width: '15rem', height:'25rem' }} border="success">
-        <Card.Img style={{width: '14rem', height:'12rem'}} variant="top" src={product.image} />
-        <Card.Body>
-          <Card.Title className="fs-4">{product.name}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">-{product.quantity}-</Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">{product.region}</Card.Subtitle>
-          <Card.Text className={`text-center text-success fs-4 fw-bold`}>
-            ${product.price}
-          </Card.Text>
-        <div className="card__buttons">
-            <EditChip onClick={() => handleEdit(product)} label="Editar" />
-            <DeleteChip onClick={() => handleDelete(product)} label="Eliminar" />
-        </div>
-        </Card.Body>
-      </Card>
+            <Card key={index} className="text-center" style={{ width: '15rem', height: 'fit-content' }} border="success">
+              <Card.Img style={{ width: '100%', height: '12rem', objectFit: 'cover' }} variant="top" src={product.image} />
+              <Card.Body>
+                <Card.Title className="fs-4">{product.name}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">-{product.quantity}-</Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted">{product.region}</Card.Subtitle>
+                <Card.Text className={`text-center text-success fs-4 fw-bold`}>
+                  ${product.price}
+                </Card.Text>
+                <div className="card__buttons">
+                  <EditChip onClick={() => handleEdit(product)} label="Editar" />
+                  <DeleteChip onClick={() => handleDelete(product)} label="Eliminar" />
+                </div>
+              </Card.Body>
+            </Card>
 
-      )
+          )
           : <NoData text={'No tienes productos'} />
       }
       <ModalEditProduct open={openEditProduct} setOpen={setOpenEditProduct} product={productToEdit} />
-      
-      </div>
+
 
     </>
   )
