@@ -24,7 +24,7 @@ const AllProducts = () => {
 
   return (
     <Container>
-      <div className='allProducts'>
+      <div className='allProducts'> //
         <div className='container'>
           <h2>¡Del campo para todos!</h2>
           <Row className="g-2">
