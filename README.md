@@ -20,7 +20,7 @@ Tecnologías y herramientas
 <li>Boostrap</li>
 <li>Firebase</li>
 <li>Firestore</li>
-<li>Reacto Google Maps API</li>
+<li>React Google Maps API</li>
 <li>Dayjs</li>
 </ul>
 <h2>Instalación</h2>
