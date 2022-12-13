@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from 'react-bootstrap/Carousel'; //
 import './Home.scss'
 import image1 from '../Assets/Images/c1.png';
 import image2 from '../Assets/Images/c2.png';
