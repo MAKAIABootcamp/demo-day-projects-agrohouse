@@ -94,7 +94,7 @@ const Home = () => {
             <img src={info1} alt="info1" />
             <h3 className="text-success">Los intermediarios</h3>
             <span className="info_text">
-            <p>Un intermediario agrícola, como agente económico, realiza operaciones de compra-venta de granos, cereales, frutas, verduras y legumbres frescos; la esencia de su negocio reside en obtener beneficios económicos a partir de los márgenes derivados de la compra-venta de los productos, una vez descontados todos sus costos.</p>
+              <p>Un intermediario agrícola, como agente económico, realiza operaciones de compra-venta de granos, cereales, frutas, verduras y legumbres frescos; la esencia de su negocio reside en obtener beneficios económicos a partir de los márgenes derivados de la compra-venta de los productos, una vez descontados todos sus costos.</p>
             </span>
           </div>
 
@@ -102,7 +102,7 @@ const Home = () => {
             <img src={info2} alt="info2" />
             <h3 className="text-success">La tecnología</h3>
             <span className="info_text">
-            <p>Hasta ahora, la tecnología en el campo, busca facilitar o realizar el trabajo de los campesinos o agricultores. También, aumentar los rendimientos de las cosechas y ahorrar los insumos de la producción. Pero, el uso de diferentes plataformas web para comercializar productos directamente por los campesinos es casi nulo </p>
+              <p>Hasta ahora, la tecnología en el campo, busca facilitar o realizar el trabajo de los campesinos o agricultores. También, aumentar los rendimientos de las cosechas y ahorrar los insumos de la producción. Pero, el uso de diferentes plataformas web para comercializar productos directamente por los campesinos es casi nulo </p>
             </span>
           </div>
 
@@ -110,7 +110,7 @@ const Home = () => {
             <img src={info3} alt="info3" />
             <h3 className="text-success">Beneficios para la salud </h3>
             <span className="info_text">
-            <p>La importancia de consumir productos orgánicos se debe al beneficio que generan los mismos para el cuerpo humano gracias a su cantidad de nutrientes, los cuales no están alterados por químicos, conservantes, colorantes, insecticidas, pesticidas u hormonas como si suelen utilizar los alimentos procesados.</p>
+              <p>La importancia de consumir productos orgánicos se debe al beneficio que generan los mismos para el cuerpo humano gracias a su cantidad de nutrientes, los cuales no están alterados por químicos, conservantes, colorantes, insecticidas, pesticidas u hormonas como si suelen utilizar los alimentos procesados.</p>
             </span>
 
           </div>

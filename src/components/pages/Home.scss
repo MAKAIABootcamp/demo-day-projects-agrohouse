@@ -1,22 +1,20 @@
 .home{
+
+  margin-top: 20px;
   width: 100%;
   height:550px;
 
 }
-
 .container:image{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-
 .image{
   display: flex;
   object-fit: contain;
   width: 100%;
   height:500px;
-
 }
 .carousel_section{
   display: flex;
@@ -32,10 +30,10 @@
       font-size: 20px;
     }
   }
-
 }
 
 .info{
+  display: flex;
 display: flex;
  gap: 60px; 
 }
@@ -43,9 +41,12 @@ display: flex;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 500px;
+  height: 400px;
   width: 350px;
   height: 330px;
 
+  margin-left: 20px;
   img{
     width:200px ;
   }
@@ -53,13 +54,16 @@ display: flex;
     font-size: 20px;
     margin-top: 10px;
   }
- 
+  p{
+    padding: 5px;
+  }
+
 }
 
 .info_text{
   display: flex;
   font-size: 14px;
-  
+
 }
 
 .home_cards{

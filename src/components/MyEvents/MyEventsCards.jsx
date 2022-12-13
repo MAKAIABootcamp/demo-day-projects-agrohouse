@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOwnEventsAsync } from "../../redux/actions/eventsAction";
 import Loading from "../Loading/Loading";
-import NoData from "../noData/NoData";
+import NoData from "../noData/NoData"
 
 const MyEventsCards = () => {
   const events = useSelector(store => store.events)
@@ -29,13 +29,13 @@ const MyEventsCards = () => {
                       <Typography variant="h5" component="div" sx={{ color: '#00960F' }} >
                         {event.name}
                       </Typography>
-                      <Typography sx={{ mb: 1.5, color: '#F5B916'}} color="text.secondary" >
+                      <Typography sx={{ mb: 1.5, color: '#F5B916' }} color="text.secondary" >
                         Productos del {event.region}
                       </Typography>
                       <Typography variant="body2">
                         {event.ubication}
                       </Typography>
-                      <Typography sx={{ mb: 1.5, color:'#220BD4', mt:1}} color="text.secondary">
+                      <Typography sx={{ mb: 1.5, color: '#220BD4', mt: 1 }} color="text.secondary">
                         {event.date}
                       </Typography>
                     </CardContent>
