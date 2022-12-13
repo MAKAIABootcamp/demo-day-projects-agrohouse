@@ -36,7 +36,7 @@ const MyEventsCards = () => {
                         {event.ubication}
                       </Typography>
                       <Typography sx={{ mb: 1.5, color:'#220BD4', mt:1}} color="text.secondary">
-                        {event.date}
+                        {event.date} //
                       </Typography>
                     </CardContent>
                   </CardActionArea>
