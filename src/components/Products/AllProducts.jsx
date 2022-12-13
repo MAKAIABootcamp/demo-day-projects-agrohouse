@@ -57,7 +57,7 @@ const AllProducts = () => {
         <div className='container_cards1'>
           {
             products.map((product, index) =>
-              <Card key={index} className="text-center" style={{ width: '15rem', height: '25rem' }} border="success">
+              <Card key={index} className="text-center" style={{ width: '15rem' }} border="success">
                 <Card.Img style={{ width: '14rem', height: '12rem' }} variant="top" src={product.image} />
                 <Card.Body>
                   <Card.Title className="fs-4">{product.name}</Card.Title>
